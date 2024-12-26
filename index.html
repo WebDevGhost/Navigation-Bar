@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0a0a33, #1a002a);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 15px;
+            margin: 10px;
+            padding: 0 15px;
+            z-index: 10;
+        }
+
+        .navbar img.logo {
+            height: 28px;
+            width: auto;
+        }
+
+        .navbar .buttons {
+            display: flex;
+            gap: 10px;
+            position: relative;
+        }
+
+        .navbar .buttons button {
+            background-color: #1e1e1e;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar .buttons button:hover {
+            background-color: #333333;
+        }
+
+        .navbar .buttons img.icon {
+            height: 20px;
+            width: 20px;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: #141414;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            padding: 15px;
+            gap: 10px;
+            width: 120px;
+            z-index: 9;
+        }
+
+        .dropdown button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown button:hover {
+            background-color: #333333;
+        }
+
+        .dropdown img.icon {
+            height: 20px;
+            width: 20px;
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+            margin-top: 100px;
+        }
+
+        .content h4 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                height: 50px;
+            }
+
+            .navbar img.logo {
+                height: 30px;
+            }
+
+            .navbar .buttons button {
+                padding: 5px 10px;
+            }
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="assets/title.png" alt="Logo" class="logo">
+        <div class="buttons">
+            <button onclick="window.location.href='URL GOES HERE'">
+                <img src="assets/home.png" alt="Icon" class="icon"> Home
+            </button>
+            <button onclick="window.location.href='URL GOES HERE'">
+                <img src="assets/about.png" alt="Icon" class="icon"> About
+            </button>
+            <button onclick="window.location.href='URL GOES HERE'">
+                <img src="assets/socials.png" alt="Icon" class="icon"> Socials
+            </button>
+            <button onclick="window.location.href='URL GOES HERE'">
+                <img src="assets/contact.png" alt="Icon" class="icon"> Contact
+            </button>
+            <button onclick="toggleDropdown()">
+                <img src="assets/menu.png" alt="Icon" class="icon"> Menu
+            </button>
+        </div>
+        <div id="dropdownMenu" class="dropdown">
+            <button onclick="window.location.href='URL GOES HERE'">
+                <img src="assets/external.png" alt="Icon" class="icon"> Page
+            </button>
+            <button onclick="window.location.href='URL GOES HERE'">
+                <img src="assets/external.png" alt="Icon" class="icon"> Page
+            </button>
+            <button onclick="window.location.href='URL GOES HERE'">
+                <img src="assets/external.png" alt="Icon" class="icon"> Page
+            </button>
+        </div>
+    </div>
+    <div class="content">
+        <h4>Navigation Bar</h4>
+        <p>A modern and clean navigation bar example.</p>
+    </div>
+</body>
+</html>
